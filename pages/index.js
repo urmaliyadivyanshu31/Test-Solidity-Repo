@@ -102,16 +102,46 @@ export default function HomePage() {
 
   useEffect(() => {getWallet();}, []);
 
+  const containerStyle = {
+    textAlign: "center",
+    fontFamily: "Arial, sans-serif",
+    padding: "20px",
+  };
+
+  const headerStyle = {
+    fontSize: "32px",
+    fontWeight: "bold",
+    color: "#2e9cca",
+    marginBottom: "20px",
+  };
+
+  const boxStyle = {
+    border: "2px solid #2e9cca",
+    borderRadius: "10px",
+    padding: "20px",
+    marginBottom: "20px",
+    background: "#f0f0f0",
+  };
+
+  const buttonStyle = {
+    padding: "10px 20px",
+    fontSize: "18px",
+    background: "#2e9cca",
+    color: "#fff",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  };
+
   return (
-    <main className="container">
-      <header><h1>Welcome to the Metacrafters ATM!</h1></header>
-      {initUser()}
+    <main style={containerStyle}>
+      <header style={headerStyle}>Welcome to the Metacrafters ATM!</header>
+      <div style={boxStyle}>
+        {initUser()}
+      </div>
       <style jsx>{`
-        .container {
-          text-align: center
-        }
-      `}
-      </style>
+        /* Add any additional global CSS styles here */
+      `}</style>
     </main>
-  )
+  );
 }
